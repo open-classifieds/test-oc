@@ -113,7 +113,10 @@ $I->fillField('#formorm_config_value','default');
 $I->click('button[type="submit"]');
 $I->see('Item updated. Please to see the changes delete the cache');
 
-
+$I->amOnPage('/oc-panel/Config/update/reviews');
+$I->fillField('#formorm_config_value','0');
+$I->click('button[type="submit"]');
+$I->see('Item updated. Please to see the changes delete the cache');
 
 $I->click('Logout'); 
 
