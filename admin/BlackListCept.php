@@ -18,6 +18,7 @@ $I->see('Advertisement is marked as spam');
 $I->amOnPage('/oc-panel/pool');
 $I->see('John Smith');
 
+/*
 $I->amOnPage('/oc-panel/User/update/4');
 $I->fillField('password1','1234');
 $I->fillField('password2','1234');
@@ -42,7 +43,7 @@ $I->fillField('password','1234');
 $I->click('auth_redirect');
 $I->amOnPage('/oc-panel');
 $I->see('welcome admin');
-
+*/
 
 $I->see('john@gmail.com');
 $I->seeElement('.btn.btn-info');
