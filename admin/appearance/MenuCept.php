@@ -50,3 +50,6 @@ $I->see('Listing','a');
 $I->see('Categories','a');
 $I->seeElement('.glyphicon.glyphicon-search');
 $I->seeElement('.glyphicon.glyphicon-envelope');
+
+$I->amOnPage('/');
+$I->click('Logout');
