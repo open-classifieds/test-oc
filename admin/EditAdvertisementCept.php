@@ -49,3 +49,7 @@ $I->see('some nice title here','h1');
 $I->see('http://open-classifieds.com','a');
 $I->see('optional address','p');
 $I->see('Phone: 949494949','a');
+
+$I->amOnPage('/');
+$I->click('Logout');
+
