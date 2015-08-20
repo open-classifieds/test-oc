@@ -6,7 +6,6 @@ $I->amOnPage('/oc-panel/auth/login');
 $I->fillField('email','gazzasdasd@reoc.lo');
 $I->fillField('password','1234');
 $I->click('auth_redirect');
-$I->see('my profile');
 //edit profile on dropdown menu
 $I->wantTo('1) see the profile edit page, 2) change my name, my email and add a description, 3) change my passwd, 4) upload a profile pic, 5) See those changes on public profile'); 
 
