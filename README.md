@@ -34,17 +34,20 @@ admin:<br>
 Email: admin@reoc.lo<br>
 Password: 1234
 
-+ Create users:
++ Import [these ads](https://mega.nz/#!A41ghCJL!dDIXPWZ9NOvRscw0STOsYNoOMGH6dAtk6Atcc1pD2LI).
+
++ Edit users:
 
 Name: Jermain Doe<br>
-Email: user@reoc.lo<br>
 Password: 1234
 
 Name: Gary Doe<br>
-Email: gazzasdasd@reoc.lo<br>
 Password: 1234
 
-+ Import [these ads](https://mega.co.nz/#!Fx0jESLb!Pg1n-CjFWXgo21yDTR3HlFLpJ7CLNP1ZDYw4fA-4skE).
+Name: John Smith<br>
+Password: 1234
+
++ Upload an image named "photo.jpg" to /oc/tests/_data/
 
 ## Run Tests
 
