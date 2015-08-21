@@ -1,7 +1,7 @@
 <?php 
 $I = new AcceptanceTester($scenario);
 $I->am('the administrator');
-$I->wantTo('enable ReCaptcha');
+$I->wantTo('enable disqus for Blog and FAQ');
 
 $I->amOnPage('/oc-panel/auth/login');
 $I->fillField('email','admin@reoc.lo');
