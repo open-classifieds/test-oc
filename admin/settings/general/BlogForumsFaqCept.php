@@ -20,7 +20,7 @@ $I->click("//button[@type='submit']"); //click save
 $I->see('Item updated. Please to see the changes delete the cache');
 
 $I->amOnPage('/');
-$I->see('Blog','a');
+$I->seeElement('a', ['href' => 'http://reoc.lo/blog']);
 
 // Create
 $I->amOnPage('/oc-panel/Blog/create');
@@ -60,7 +60,7 @@ $I->click("//button[@type='submit']"); //click save
 $I->see('Item updated. Please to see the changes delete the cache');
 
 $I->amOnPage('/');
-$I->dontsee('Blog','a');
+$I->dontseeElement('a', ['href' => 'http://reoc.lo/blog']);
 
 /////////////////////////////////////////////////////////////////
 // activate forums from settings -> general -> all configurations
@@ -140,7 +140,7 @@ $I->click("//button[@type='submit']"); //click save
 $I->see('Item updated. Please to see the changes delete the cache');
 
 $I->amOnPage('/');
-$I->see('FAQ','a');
+$I->seeElement('a', ['href' => 'http://reoc.lo/faq']);
 
 // Create
 $I->amOnPage('/oc-panel/content/create?type=help');
@@ -180,4 +180,4 @@ $I->click("//button[@type='submit']"); //click save
 $I->see('Item updated. Please to see the changes delete the cache');
 
 $I->amOnPage('/');
-$I->dontsee('FAQ','a');
+$I->dontSeeElement('a', ['href' => 'http://reoc.lo/faq']);
