@@ -12,7 +12,6 @@ $I->amOnPage('/oc-panel/');
 $I->see('welcome admin');
 
 $I->wantTo('activate Splash theme');
-$I->amOnPage('/oc-panel/theme');
 $I->amOnPage('/oc-panel/Config/update/theme');
 $I->fillField('#formorm_config_value','splash');
 $I->click('button[type="submit"]');
