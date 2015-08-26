@@ -17,9 +17,21 @@ $I->fillField('#price','25');
 $I->fillField('#website','https://www.google.com');
 $I->fillField('#name','David');
 $I->fillField('#email','david@gmail.com');
-//$I->click('submit');
-//$I->seeElement('.alert');
+$I->click('submit_btn');
 
+$I->see('Advertisement is posted. Congratulations!');
 
-//$I->see('This field is required.');
+$I->amOnPage('/apartment/new-ad.html');
+$I->see('New ad','h1');
+$I->see('Price : 25.00','span');
+$I->see('Phone: 99885522','a');
+$I->see('This is a new ad');
+$I->see('Barcelona');
+$I->seeElement('a', ['href' => 'http://reoc.lo/user/david']);
+$I->seeElement('a', ['href' => 'https://www.google.com']);
+
+// Check if user has created
+$I->amOnPage('/user/david');
+$I->see('David','h3');
+$I->dontSee('Page not found');
 
