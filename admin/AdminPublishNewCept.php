@@ -11,17 +11,26 @@ $I->see('welcome admin');
 
 $I->amOnPage('publish-new.html');
 $I->see('Publish new advertisement','h1');
-$I->fillField('#title',"Admin's ad");
+$I->fillField('#title',"Admin ad");
 $I->click('.select-category');
 $I->fillField('category','18');
 $I->fillField('location','57');
-$I->fillField('#description','This is a new ad');
+$I->fillField('#description','This is a new admin ad');
 $I->attachFile('input[id="fileInput0"]', 'photo.jpg');
 $I->fillField('#phone','99885522');
 $I->fillField('#address','barcelona');
 $I->fillField('#price','25');
-$I->fillField('#website','https://www.google.com');
-//$I->click('submit');
-//$I->seeElement('.alert');
+$I->fillField('#website','https://www.admin.com');
+$I->click('submit_btn');
+
+$I->see('Advertisement is posted. Congratulations!');
+
+$I->amOnPage('/apartment/admin-ad.html');
+$I->see('Admin ad','h1');
+$I->see('Price : 25.00','span');
+$I->see('Phone: 99885522','a');
+$I->see('This is a new admin ad');
+$I->see('Barcelona');
+
 
 $I->click('Logout'); 
