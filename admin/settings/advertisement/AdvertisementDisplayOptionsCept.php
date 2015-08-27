@@ -99,6 +99,10 @@ $I->amOnPage('/oc-panel/myads/update/1');
 $I->fillField('address','Madrid');
 $I->click('submit_btn');
 $I->see('Advertisement is updated');
+// Import Lat & Long
+$I->amOnPage('/oc-panel/import');
+$I->click('a[href="http://reoc.lo/oc-panel/tools/get_ads_latlgn"]');
+
 //Read
 $I->amOnPage('/jobs/some-nice-title-here.html');
 $I->seeElement('.img-responsive');
