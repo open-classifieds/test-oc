@@ -23,7 +23,7 @@ $I->see('Advertisement is posted. Congratulations!');
 
 $I->amOnPage('/apartment/new-ad.html');
 $I->see('New ad','h1');
-$I->see('Price : 25.00','span');
+$I->see('25.00','span');
 $I->see('Phone: 99885522','a');
 $I->see('This is a new ad');
 $I->see('Barcelona');

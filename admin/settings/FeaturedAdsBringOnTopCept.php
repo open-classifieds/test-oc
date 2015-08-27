@@ -24,8 +24,7 @@ $I->see('Item updated. Please to see the changes delete the cache');
 // Read
 $I->amOnPage('/oc-panel/myads');
 $I->seeElement('.glyphicon.glyphicon-circle-arrow-up');
-$I->seeElement('a', ['data-original-title' => 'Featured']);
-$I->seeElement('a', ['data-original-title' => 'Refresh listing, go to top?']);
+$I->see('Featured','a');
 
 $I->amOnPage('/jobs/some-nice-title-here.html');
 $I->see('Your Advertisement can go on top again! For only', 'p');
@@ -47,8 +46,7 @@ $I->see('Item updated. Please to see the changes delete the cache');
 
 $I->amOnPage('/oc-panel/myads');
 $I->dontSeeElement('.glyphicon.glyphicon-circle-arrow-up');
-$I->dontSeeElement('a', ['data-original-title' => 'Featured']);
-$I->dontSeeElement('a', ['data-original-title' => 'Refresh listing, go to top?']);
+$I->dontSee('Featured','a');
 
 $I->amOnPage('/jobs/some-nice-title-here.html');
 $I->dontSee('Your Advertisement can go on top again! For only', 'p');

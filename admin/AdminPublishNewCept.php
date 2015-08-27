@@ -27,7 +27,7 @@ $I->see('Advertisement is posted. Congratulations!');
 
 $I->amOnPage('/apartment/admin-ad.html');
 $I->see('Admin ad','h1');
-$I->see('Price : 25.00','span');
+$I->see('25.00','span');
 $I->see('Phone: 99885522','a');
 $I->see('This is a new admin ad');
 $I->see('Barcelona');

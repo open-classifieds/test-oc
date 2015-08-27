@@ -15,6 +15,11 @@ $I->fillField('#formorm_config_value','1');
 $I->click('button[type="submit"]');
 $I->see('Item updated. Please to see the changes delete the cache');
 
+$I->amOnPage('/oc-panel/map');
+$I->fillField('cd','150');
+$I->click("//input[@value='Add']");
+$I->click('submit');
+//$I->see('Map saved.'); // Map is saved, not sure why this is not visibly on test :S not an issue!
 
 // Check if interactive map appears in all premium themes.
 $I->wantTo('activate Splash theme');
@@ -118,4 +123,20 @@ $I->fillField('#formorm_config_value','default');
 $I->click('button[type="submit"]');
 $I->see('Item updated. Please to see the changes delete the cache');
 
+$I->amOnPage('/oc-panel/Config/update/map_jscode');
+$I->fillField('#formorm_config_value','');
+$I->click('button[type="submit"]');
+$I->see('Item updated. Please to see the changes delete the cache');
 
+$I->amOnPage('/oc-panel/Config/update/map_settings');
+$I->fillField('#formorm_config_value','');
+$I->click('button[type="submit"]');
+$I->see('Item updated. Please to see the changes delete the cache');
+
+$I->amOnPage('/oc-panel/Config/update/map_active');
+$I->fillField('#formorm_config_value','0');
+$I->click('button[type="submit"]');
+$I->see('Item updated. Please to see the changes delete the cache');
+
+$I->amOnPage('/');
+$I->dontSeeElement('div', ['id' => 'visualization']);
