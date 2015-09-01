@@ -36,18 +36,11 @@ Password: 1234
 
 + Import [these ads](https://mega.nz/#!A41ghCJL!dDIXPWZ9NOvRscw0STOsYNoOMGH6dAtk6Atcc1pD2LI).
 
-+ Edit users:
-
-Name: Jermain Doe<br>
-Password: 1234
-
-Name: Gary Doe<br>
-Password: 1234
-
-Name: John Smith<br>
-Password: 1234
-
 + Upload an image named "photo.jpg" to /oc/tests/_data/
+
+Run this test to set users passwords:
+
+    php codecept.phar run acceptance admin/SetUsersPasswordsCept
 
 ## Run Tests
 
