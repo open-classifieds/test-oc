@@ -29,7 +29,7 @@ $I->click('button[type="submit"]');
 $I->see('Item updated. Please to see the changes delete the cache');
 
 $I->amOnPage('/');
-$I->seeElement('div', ['id' => 'visualization']);
+$I->see('Map', 'h2');
 
 
 $I->wantTo('activate Reclassifieds3 theme');
@@ -39,7 +39,7 @@ $I->click('button[type="submit"]');
 $I->see('Item updated. Please to see the changes delete the cache');
 
 $I->amOnPage('/');
-$I->seeElement('div', ['id' => 'visualization']);
+$I->see('Map', 'h2');
 
 
 
@@ -51,7 +51,7 @@ $I->click('button[type="submit"]');
 $I->see('Item updated. Please to see the changes delete the cache');
 
 $I->amOnPage('/');
-$I->seeElement('div', ['id' => 'visualization']);
+$I->see('Map', 'h2');
 
 
 
@@ -64,7 +64,7 @@ $I->click('button[type="submit"]');
 $I->see('Item updated. Please to see the changes delete the cache');
 
 $I->amOnPage('/');
-$I->seeElement('div', ['id' => 'visualization']);
+$I->see('Map', 'h2');
 
 
 
@@ -77,7 +77,7 @@ $I->click('button[type="submit"]');
 $I->see('Item updated. Please to see the changes delete the cache');
 
 $I->amOnPage('/');
-$I->seeElement('div', ['id' => 'visualization']);
+$I->see('Map', 'h2');
 
 
 
@@ -89,7 +89,7 @@ $I->click('button[type="submit"]');
 $I->see('Item updated. Please to see the changes delete the cache');
 
 $I->amOnPage('/');
-$I->seeElement('div', ['id' => 'visualization']);
+$I->see('Map', 'h2');
 
 
 
@@ -101,7 +101,7 @@ $I->click('button[type="submit"]');
 $I->see('Item updated. Please to see the changes delete the cache');
 
 $I->amOnPage('/');
-$I->seeElement('div', ['id' => 'visualization']);
+$I->see('Map', 'h2');
 
 
 
@@ -113,7 +113,7 @@ $I->click('button[type="submit"]');
 $I->see('Item updated. Please to see the changes delete the cache');
 
 $I->amOnPage('/');
-$I->seeElement('div', ['id' => 'visualization']);
+$I->see('Map', 'h2');
 
 
 
@@ -139,4 +139,4 @@ $I->click('button[type="submit"]');
 $I->see('Item updated. Please to see the changes delete the cache');
 
 $I->amOnPage('/');
-$I->dontSeeElement('div', ['id' => 'visualization']);
+$I->dontSee('Map', 'h2');
