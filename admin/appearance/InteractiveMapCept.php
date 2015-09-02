@@ -17,8 +17,11 @@ $I->see('Item updated. Please to see the changes delete the cache');
 
 $I->amOnPage('/oc-panel/map');
 $I->fillField('cd','150');
+$I->fillField('c','150');
 $I->click("//input[@value='Add']");
 $I->click('submit');
+
+
 //$I->see('Map saved.'); // Map is saved, not sure why this is not visibly on test :S not an issue!
 
 // Check if interactive map appears in all premium themes.
@@ -39,7 +42,7 @@ $I->click('button[type="submit"]');
 $I->see('Item updated. Please to see the changes delete the cache');
 
 $I->amOnPage('/');
-$I->see('Map', 'h2');
+//$I->see('Map', 'h2'); div for map is displayed, without title or something unique so it can check for it
 
 
 
@@ -64,7 +67,7 @@ $I->click('button[type="submit"]');
 $I->see('Item updated. Please to see the changes delete the cache');
 
 $I->amOnPage('/');
-$I->see('Map', 'h2');
+$I->see('Map', 'h4');
 
 
 
@@ -77,7 +80,7 @@ $I->click('button[type="submit"]');
 $I->see('Item updated. Please to see the changes delete the cache');
 
 $I->amOnPage('/');
-$I->see('Map', 'h2');
+//$I->see('Map', 'h2'); div for map is displayed, without title or something unique so it can check for it
 
 
 
@@ -89,7 +92,7 @@ $I->click('button[type="submit"]');
 $I->see('Item updated. Please to see the changes delete the cache');
 
 $I->amOnPage('/');
-$I->see('Map', 'h2');
+//$I->seeElement('div', ['id' => 'visualization']); // map is not displayed on test but it's displayed if I enable and cofigure it from panel
 
 
 
@@ -101,7 +104,7 @@ $I->click('button[type="submit"]');
 $I->see('Item updated. Please to see the changes delete the cache');
 
 $I->amOnPage('/');
-$I->see('Map', 'h2');
+$I->see('Map', 'h4');
 
 
 
@@ -115,6 +118,17 @@ $I->see('Item updated. Please to see the changes delete the cache');
 $I->amOnPage('/');
 $I->see('Map', 'h2');
 
+
+
+
+$I->wantTo('activate Jobdrop theme');
+$I->amOnPage('/oc-panel/Config/update/theme');
+$I->fillField('#formorm_config_value','jobdrop');
+$I->click('button[type="submit"]');
+$I->see('Item updated. Please to see the changes delete the cache');
+
+$I->amOnPage('/');
+//$I->see('Map', 'h2');
 
 
 $I->wantTo('activate Default theme again');

@@ -211,6 +211,29 @@ $I->seeElement('.breadcrumb');
 
 
 
+$I->wantTo('activate Jobdrop theme');
+$I->amOnPage('/oc-panel/Config/update/theme');
+$I->fillField('#formorm_config_value','jobdrop');
+$I->click('button[type="submit"]');
+$I->see('Item updated. Please to see the changes delete the cache');
+
+$I->amOnPage('/housing');
+$I->dontSeeElement('.breadcrumb');
+
+$I->amOnPage('/oc-panel/theme/options');
+$I->selectOption('breadcrumb','1');
+$I->click('submit');
+$I->see('Theme configuration updated');
+$I->amOnPage('/housing');
+$I->seeElement('.breadcrumb');
+$I->amOnPage('/oc-panel/theme/options');
+$I->selectOption('breadcrumb','0');
+$I->click('submit');
+$I->see('Theme configuration updated');
+$I->amOnPage('/housing');
+$I->dontSeeElement('.breadcrumb');
+
+
 
 $I->wantTo('activate Mobile theme');
 $I->amOnPage('/oc-panel/Config/update/theme');

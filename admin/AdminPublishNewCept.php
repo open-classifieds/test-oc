@@ -9,7 +9,7 @@ $I->fillField('password','1234');
 $I->click('auth_redirect');
 $I->see('welcome admin');
 
-$I->amOnPage('publish-new.html');
+$I->amOnPage('/publish-new.html');
 $I->see('Publish new advertisement','h1');
 $I->fillField('#title',"Admin ad");
 $I->click('.select-category');
