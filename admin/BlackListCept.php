@@ -18,12 +18,13 @@ $I->see('Advertisement is marked as spam');
 $I->amOnPage('/oc-panel/pool');
 $I->see('John Smith');
 
-/*
+
 $I->amOnPage('/oc-panel/User/update/4');
 $I->fillField('password1','1234');
 $I->fillField('password2','1234');
 $I->click('Update');
 $I->seeElement('.alert.alert-success');
+$I->see('Password is changed');
 
 $I->amOnPage('/');
 $I->click('Logout');
@@ -33,7 +34,8 @@ $I->fillField('email','john@gmail.com');
 $I->fillField('password','1234');
 $I->click('auth_redirect');
 $I->amOnPage('/publish-new.html');
-$I->seeElemenet('.alert');
+$I->seeElement('.alert');
+$I->see('Your profile has been disable for posting, due to recent spam content! If you think this is a mistake please contact us.');
 
 $I->click('Logout');
 
@@ -43,14 +45,12 @@ $I->fillField('password','1234');
 $I->click('auth_redirect');
 $I->amOnPage('/oc-panel');
 $I->see('welcome admin');
-*/
-
-$I->see('john@gmail.com');
-$I->seeElement('.btn.btn-info');
 
 
+$I->amOnPage('/oc-panel/pool');
+$I->see('Remove','a');
 
-$I->click('.btn.btn-info');
+$I->click('Remove');
 $I->see('User John Smith has been removed from black list.');
 
 $I->amOnPage('http://reoc.lo/oc-panel/ad/activate/4?current_url=30');
