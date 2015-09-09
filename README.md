@@ -38,9 +38,9 @@ Password: 1234
 
 + Upload an image named "photo.jpg" to /oc/tests/_data/
 
-Run this test to set users passwords:
++ Run this test to set users passwords:
 
-    php codecept.phar run acceptance admin/SetUsersPasswordsCept
+        php codecept.phar run acceptance admin/SetUsersPasswordsCept
 
 ## Run Tests
 
