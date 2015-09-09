@@ -54,6 +54,7 @@ $I->see('Item updated. Please to see the changes delete the cache');
 // set price to category
 $I->amOnPage('/oc-panel/category/update/18');
 $I->fillField('#formorm_price','1');
+$I->click('button[type="submit"]');
 
 
 $I->amOnPage('/publish-new.html');
@@ -86,6 +87,7 @@ $I->see('Barcelona');
 
 $I->amOnPage('/oc-panel/category/update/18');
 $I->fillField('#formorm_price','0');
+$I->click('button[type="submit"]');
 
 
 
@@ -155,6 +157,7 @@ $I->see('Item updated. Please to see the changes delete the cache');
 // set price to category
 $I->amOnPage('/oc-panel/category/update/18');
 $I->fillField('#formorm_price','1');
+$I->click('button[type="submit"]');
 
 $I->amOnPage('/publish-new.html');
 $I->see('Publish new advertisement','h1');
@@ -185,3 +188,14 @@ $I->see('Payment with Confirmation On','h1');
 
 
 
+// back to default
+$I->amOnPage('/oc-panel/category/update/18');
+$I->fillField('#formorm_price','0');
+$I->click('button[type="submit"]');
+
+$I->amOnPage('/oc-panel/Config/update/moderation');
+$I->see('Update Config','h1');
+$I->wantTo('select moderation on');
+$I->fillField('#formorm_config_value', '1');
+$I->click("//button[@type='submit']"); //click save
+$I->see('Item updated. Please to see the changes delete the cache');

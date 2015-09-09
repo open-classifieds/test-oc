@@ -19,7 +19,7 @@ $I->amOnPage('/jobs/title-for-the-ad.html');
 $I->click('Buy Now');
 
 $I->see('Checkout','h1');
-$I->see('Purchase: title-for-the-ad (Buy product)');
+$I->see('Purchase: title-for-the-ad');
 
 $I->amOnPage('/oc-panel/Config/update/paypal_seller');
 $I->fillField('#formorm_config_value','0');
