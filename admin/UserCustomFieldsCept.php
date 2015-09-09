@@ -65,7 +65,11 @@ $I->dontSeeElement('.glyphicon.glyphicon-trash');
 
 
 
-
+$I->wantTo('activate Default theme again');
+$I->amOnPage('/oc-panel/Config/update/theme');
+$I->fillField('#formorm_config_value','default');
+$I->click('button[type="submit"]');
+$I->see('Item updated. Please to see the changes delete the cache');
 
 
 
