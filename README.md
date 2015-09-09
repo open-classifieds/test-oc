@@ -24,19 +24,21 @@ Put application URL into:  tests/acceptance.suite.yml
             - \Helper\Acceptance
             
 
-and clone repo and copy the tests into /oc/tests/acceptance/
-
 ## Before running tests
+
++ Clone repo
+
++ Move photo.jpg to /oc/tests/_data/
+
++ Copy the tests into /oc/tests/acceptance/
 
 + Install Open Classifieds
 
-admin:<br>
-Email: admin@reoc.lo<br>
-Password: 1234
+    admin:<br>
+    Email: admin@reoc.lo<br>
+    Password: 1234
 
 + Import [these ads](https://mega.nz/#!A41ghCJL!dDIXPWZ9NOvRscw0STOsYNoOMGH6dAtk6Atcc1pD2LI).
-
-+ Upload an image named "photo.jpg" to /oc/tests/_data/
 
 + Run this test to set users passwords:
 
