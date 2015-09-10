@@ -25,7 +25,7 @@ $I->fillField('#name','user');
 $I->fillField("#email", 'user@user.com');
 $I->fillField("#description", 'Hello!!!');
 $I->click("button[type=submit]");
-$I->see('You have successfuly changed your data');
+$I->see('You have successfully changed your data');
 
 //repeat 2)
 $I->wantTo('2) change my name, my email and remove description');
@@ -34,7 +34,7 @@ $I->fillField('#name','Gary Doe');
 $I->fillField("#email", 'gazzasdasd@reoc.lo');
 $I->fillField("#description", '');
 $I->click("button[type=submit]");
-$I->see('You have successfuly changed your data');
+$I->see('You have successfully changed your data');
 
 // 3)
 $I->wantTo('3) change my passwd');

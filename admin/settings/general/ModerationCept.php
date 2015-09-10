@@ -196,6 +196,6 @@ $I->click('button[type="submit"]');
 $I->amOnPage('/oc-panel/Config/update/moderation');
 $I->see('Update Config','h1');
 $I->wantTo('select moderation on');
-$I->fillField('#formorm_config_value', '1');
+$I->fillField('#formorm_config_value', '0');
 $I->click("//button[@type='submit']"); //click save
 $I->see('Item updated. Please to see the changes delete the cache');

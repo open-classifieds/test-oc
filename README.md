@@ -1,74 +1,89 @@
 # Automated Testing for OC
 
-## Download Codeception
+## Instructions
 
-Download the phar file to the root of your web application (inside /oc/):
 
-    wget http://codeception.com/codecept.phar
+1. Install Open Classifieds. 
 
-## Install
-
-Open console directory where you saved codecept.phar file and execute:
-
-    php codecept.phar bootstrap
-
-## Configure Acceptance Tests
-
-Put application URL into:  tests/acceptance.suite.yml 
-
-    class_name: AcceptanceTester
-    modules:
-        enabled:
-            - PhpBrowser:
-                url: '{YOUR APP'S URL}'
-            - \Helper\Acceptance
-            
-
-## Before running tests
-
-+ Clone repo
-
-+ Move photo.jpg to /oc/tests/_data/
-
-+ Copy the tests into /oc/tests/acceptance/
-
-+ Install Open Classifieds
-
-    admin:<br>
+    Admin must have:<br>
     Email: admin@reoc.lo<br>
     Password: 1234
 
-+ Import [these ads](https://mega.nz/#!A41ghCJL!dDIXPWZ9NOvRscw0STOsYNoOMGH6dAtk6Atcc1pD2LI).
+2. Upload all premium themes into /themes folder.
 
-+ Run this test to set users passwords:
+3. Download [this file](https://mega.nz/#!A41ghCJL!dDIXPWZ9NOvRscw0STOsYNoOMGH6dAtk6Atcc1pD2LI) and upload it On panel, Tools -> Import. Then, click PROCESS. 
 
-        php codecept.phar run acceptance admin/SetUsersPasswordsCept
+4. From the root of the installation run this command:
 
-## Run Tests
+        cd oc
 
-Codeception are executed with 'run' command:
 
-    php codecept.phar run
-    
-To run only acceptance tests:
+5. Download codeception:
 
-    php codecept.phar run acceptance
-    
-To see step-by-step report on the performed actions of the tests execute this command:
+        wget http://codeception.com/codecept.phar
 
-    php codecept.phar run --steps
-    
-To generate JUnit XML output, you can provide the --xml option, and --html for HTML report:
 
-    php codecept.phar run --steps --xml --html
-    
-To see more available options execute this command:
+6. Install codeception:
 
-    php codecept.phar help run
-    
-Run single test: (for example)
+        php codecept.phar bootstrap
 
-    php codecept.phar run acceptance RegisterCept --steps
+
+7. Open the configuration file to edit your application URL
+
+        vim tests/acceptance.suite.yml
+
+
+    Edit line 11 to:
+
+        url: http://reoc.lo
+
+
+    Now, your acceptance.suite.yml must look like this: 
+
+        # Codeception Test Suite Configuration
+        #
+        # Suite for acceptance tests.
+        # Perform tests in browser using the WebDriver or PhpBrowser.
+        # If you need both WebDriver and PHPBrowser tests - create a separate suite.
+
+        class_name: AcceptanceTester
+        modules:
+            enabled:
+                - PhpBrowser:
+                    url: http://reoc.lo
+                - \Helper\Acceptance
+
+
+8. Clone tests into the acceptance tests directory:
+
+        cd tests/acceptance/
+        git clone https://github.com/open-classifieds/test-oc.git
+
+
+9. Move oc/tests/acceptance/test-oc/photo.jpg to oc/tests/_data/
+
+        mv test-oc/photo.jpg ../_data/
+
+
+10. Go to the /oc directory, to run the first test:
+
+        cd ../..
+        php codecept.phar run acceptance test-oc/admin/SetUsersPasswordsCept
+
+
+    This test changes the passwords of users.
+
+
+11. Run all the tests:
+
+        php codecept.phar run acceptance
+
+    To see all the steps for each test run this command (Optional, not recommended for this case)
+
+        php codecept.phar run acceptance --steps
+
+
+
     
 ## Generate scenarios
 
@@ -78,3 +93,4 @@ Generates user-friendly text scenarios from scenario-driven tests.
     
 
     
+
